@@ -13,7 +13,8 @@ function create_grid(size = 0) {
                 //the next 2 lines give each box set dimensions for a clear display of the box
                 box.style.width = "20px";
                 box.style.height = "20px";
-                box.style.border = "solid";
+                box.style.border = "1px solid";
+                box.style.flex = "1";
                 mini_container.appendChild(box);
             }
             main_container.appendChild(mini_container);
@@ -30,9 +31,9 @@ function create_grid(size = 0) {
                 box.classList.add("box");
                 box.style.display = "flex";
                 //the next 2 lines give each box set dimensions for a clear display of the box
-                box.style.width = "20px";
-                box.style.height = "20px";
-                box.style.border = "solid";
+                box.style.width = `${500 / size}px`;
+                box.style.height = `${500 / size}px`;
+                box.style.border = "1px solid";
                 mini_container.appendChild(box);
             }
             main_container.appendChild(mini_container);
@@ -42,7 +43,7 @@ function create_grid(size = 0) {
 }
 
 
-const main_container = document.querySelector(".container");
+const main_container = document.querySelector(".main-container");
 main_container.style.display = "flex";
 const grid_button = document.querySelector(".new-grid");
 grid_button.addEventListener("click", grid_request);
